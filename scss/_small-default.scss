@@ -1,72 +1,125 @@
 p {
-    line-height: 130%;
-    color: $fontColor;
-    
+	line-height: 130%;
+	color: $fontColor;
+
 } // end p
 /* ------ form stuff nested inside main ----- */
+
 form {
-    margin: 1rem $gutter;
-    max-width: 25rem;
-    fieldset {
-        border: 1px solid $lightGrey;
-        border-radius: .4rem;
-        padding: 0 $gutter;
-        margin: 2rem 0;
-        legend {
-            text-align: center;
-            color: $secondaryColor;
-            padding: 0 .4rem;
-        }
-    }
-    label.top {
-        font-size: .75rem;
-        display: block;
-        padding: .75rem 0;
-        span {
-            font-size: .75rem;
-            color: $secondaryColor;
-        } //end span
-        input, select {
-            display: block;
-            font-size: 1.25rem;
-            padding: .75rem;
-            background-olor: #FbFbFb;
-            border: none;
-            border-radius: 5px;
-            color: $primaryColor;
-            margin-top: .2rem;
-            width: 100%;
-        } // end input
-        textarea {
-            min-height: 13rem;
-        }
-        input:required {
-            border: 1px solid red;
-        }
-        input:required:valid {
-            border-color: $primaryColor;
-        }
-        input:focus {
-            box-shadow: 1px 1px 4px rgba(0,0,0,0.5) inset;
-        }
-    } // end label
-    label.sbs {
-        display: block;
-        padding: .75rem 0;
-    }
-    h2 {
-        font-weight: $normalWeight;
-        font-size: .75rem;
-        padding: 1.5rem 0 0 0;
-    }
-    input.submitBtn {
-        border: none;
-        background-color: $secondaryColor;
-        color: white;
-        font-size: 1.5rem;
-        font-weight: $normalWeight;
-        padding: .4rem 1rem;
-        border-radius: 1rem;
-        width: 100%;
-    }
+	margin: 1rem $gutter;
+	max-width: 25rem;
+	fieldset {
+		border: 1px solid $lightGrey;
+		border-radius: .4rem;
+		padding: 0 $gutter;
+		margin: 2rem 0;
+		legend {
+			text-align: center;
+			color: $secondaryColor;
+			padding: 0 .4rem;
+		}
+	}
+	label.top {
+		font-size: .75rem;
+		display: block;
+		padding: .75rem 0;
+		span {
+			font-size: .75rem;
+			color: $secondaryColor;
+		} //end span
+		input,
+		select {
+			display: block;
+			font-size: 1.25rem;
+			padding: .75rem;
+			background-olor: #FbFbFb;
+			border: none;
+			border-radius: 5px;
+			color: $primaryColor;
+			margin-top: .2rem;
+			width: 100%;
+		} // end input
+		textarea {
+			min-height: 13rem;
+		}
+		input:required {
+			border: 1px solid red;
+		}
+		input:required:valid {
+			border-color: $primaryColor;
+		}
+		input:focus {
+			box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5) inset;
+		}
+	} // end label
+	label.sbs {
+		display: block;
+		padding: .75rem 0;
+	}
+	h2 {
+		font-weight: $normalWeight;
+		font-size: .75rem;
+		padding: 1.5rem 0 0 0;
+	}
+	input.submitBtn {
+		border: none;
+		background-color: $secondaryColor;
+		color: white;
+		font-size: 1.5rem;
+		font-weight: $normalWeight;
+		padding: .4rem 1rem;
+		border-radius: 1rem;
+		width: 100%;
+	}
 } // end form
+// Styling for the user instructions for each input
+section div {
+	color: #777;
+	font-size: .75rem;
+	padding: .3rem 0 .1rem .2rem;
+	margin-top: 2rem;
+}
+
+// Styling for each input (text and select)
+.myInput {
+	width: 100%;
+	font-size: 1rem;
+	color: $secondaryColor;
+	padding: .75rem;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+	background-color: #fbfbfb;
+}
+
+.sbs {
+	margin-left: .75rem;
+}
+
+// Additional details to fill out each input correctly (hidden by default)
+section span {
+	display: none;
+}
+
+section.error span {
+	display: block;
+	font-size: .75rem;
+	color: #C20000;
+	padding-left: .2rem;
+}
+
+
+section.error div {
+	background-color: rgba(255, 0, 0, 0.3);
+}
+
+// error instructions at the top of the page
+section p {
+	display: none;
+}
+
+section.error p {
+	display: block;
+	border: solid 1px #F00;
+	background-color: rgba(255, 0, 0, 0.3);
+	padding: .3rem $gutter;
+}

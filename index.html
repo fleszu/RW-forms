@@ -7,64 +7,85 @@
 	<title>Forms</title>
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet">
 	<!-- STYLE SHEETS -->
-	<link href="css/styles.css" rel="stylesheet">
+	<link href="scss/styles.css" rel="stylesheet">
 
 </head>
-    <body>
-    <!-- PAGE HEADER GOES HERE -->
-        <div id="headerWrapper">
-        <header class="clearfix">
-            <form>
-                <input type="search" placeholder="search...">
-            </form>
-            <img src="images/logo.png" alt="logo">
-            <h1>Conference</h1>
-        </header>
-        </div>
-    <!-- end header wpapper -->
-    <!-- PAGE NAVIGATION GOES HERE --> 
-        <div id="navWrapper">
-        <nav class="clearfix">
-            <ul>
-                <li class="active"><a href="index.html">Register</a></li>
-                <li><a href="used.html">Agenda</a></li>
-                <li><a href="service.html">Contact</a></li>
-                <li><a href="location.html">Locations</a></li>
-                            
-            </ul>    
-        </nav>
-        </div>
-    <!-- end nav wpapper -->
-    <!-- PAGE CONTENT GOES HERE -->
-        <main class="clearfix">
-            <figure class="clearfix">
-            <img src="images/banner.jpg" alt="banner">
-            </figure>
-            <h1>Register for iConference</h1>
-            
-            <form method="get" action="thanks.html">
-               <fieldset>
-                <legend>Personal Information</legend>   
-                <label class="top">First Name <span>(required)</span><input type="text" name="name" required></label>
-                <label class="top">Email <span>(required)</span><input type="email" name="email" placeholder="puaro@vp.pl" required></label>
-                <label class="top">Phone <input type="tel" name="phone"></label>
-                <label class="top">Website<input type="url" name="url" placeholder="http://"></label>
-              </fieldset>
-                <legend>Conference Pass Details</legend>
-                <h2>Pass Type</h2>
-                <label class="sbs"><input type="radio" value="5day" name="passType">Five Day Pass</label>
-                <label accesskey=""class="sbs" ><input type="radio" value="3day" name="passType">Three Day Pass</label>
-                <label class="sbs"><input type="radio" value="1day" name="passType">One Day Pass</label>
-                <h2>Meal Choice</h2>
-                <label class="sbs"><input type="checkbox" name="monDinner" value="yes">Monday Dinner</label>
-                <label class="sbs"><input type="checkbox" name="tueDinner" value="yes">Thuesday Dinner</label>
-                <label class="sbs"><input type="checkbox" name="wedDinner" value="yes">Wednesday Dinner</label>
-            <fieldset>
-                <legend>Hotel Information</legend>
-                <label class="top">Arrival Date<input type="date" name="arriveDate"></label>
-                <label class="top">Arrival Time<input type="time"></label>
-                <label class="top">Departure Date<input type="date" name="departDate"></label>
-                <label class="top">Room Preference
+
+<body>
+	<!-- PAGE HEADER GOES HERE -->
+	<div id="headerWrapper">
+		<header class="clearfix">
+			<form>
+				<input type="search" placeholder="search...">
+			</form>
+			<img src="images/logo.png" alt="logo">
+			<h1>Conference</h1>
+		</header>
+	</div>
+	<!-- end header wpapper -->
+	<!-- PAGE NAVIGATION GOES HERE -->
+	<div id="navWrapper">
+		<nav class="clearfix">
+			<ul>
+				<li class="active"><a href="index.html">Register</a></li>
+				<li><a href="used.html">Agenda</a></li>
+				<li><a href="service.html">Contact</a></li>
+				<li><a href="location.html">Locations</a></li>
+
+			</ul>
+		</nav>
+	</div>
+	<!-- end nav wpapper -->
+	<!-- PAGE CONTENT GOES HERE -->
+	<main>
+
+		<h1>Register</h1>
+
+		<form name="myForm" method="post" action="formProcessor.html" onsubmit="return validateForm()">
+			<section id="formProblems" class="error">
+				<p>There was a problem with your submission.<br>Errors have been highlighted below.</p>
+			</section>
+			<section id="fullName" class="error">
+				<label><div>Full Name*</div>
+              	<input name="name" type="text" class="myInput" autocomplete="name">
+              	<span>Please provide your full name</span>
+              	</label>
+			</section>
+
+			<section id="phoneNumber" class="error">
+				<label><div>Cell Number*</div>
+              		<input name="phone" type="tel" class="myInput" placeholder="4325556789" autocomplete="tel">
+              		<span>Phone number needs to be 10-15 digits</span>
+              	</label>
+			</section>
+			<section id="payMethod" class="error">
+				<div>Payment Method*</div>
+				<label><input name="payMethod" type="radio" class="sbs">VISA</label>
+				<label><input name="payMethod" type="radio" class="sbs">Master Card</label>
+				<label><input name="payMethod" type="radio" class="sbs">Discover</label>
+			</section>
+			<fieldset>
+				<legend>Personal Information</legend>
+				<label class="top">First Name <span>(required)</span><input type="text" name="name" required></label>
+				<label class="top">Email <span>(required)</span><input type="email" name="email" placeholder="puaro@vp.pl" required></label>
+				<label class="top">Phone <input type="tel" name="phone"></label>
+				<label class="top">Website<input type="url" name="url" placeholder="http://"></label>
+			</fieldset>
+			<legend>Conference Pass Details</legend>
+			<h2>Pass Type</h2>
+			<label class="sbs"><input type="radio" value="5day" name="passType">Five Day Pass</label>
+			<label accesskey="" class="sbs"><input type="radio" value="3day" name="passType">Three Day Pass</label>
+			<label class="sbs"><input type="radio" value="1day" name="passType">One Day Pass</label>
+			<h2>Meal Choice</h2>
+			<label class="sbs"><input type="checkbox" name="monDinner" value="yes">Monday Dinner</label>
+			<label class="sbs"><input type="checkbox" name="tueDinner" value="yes">Thuesday Dinner</label>
+			<label class="sbs"><input type="checkbox" name="wedDinner" value="yes">Wednesday Dinner</label>
+			<fieldset>
+				<legend>Hotel Information</legend>
+				<label class="top">Arrival Date<input type="date" name="arriveDate"></label>
+				<label class="top">Arrival Time<input type="time"></label>
+				<label class="top">Departure Date<input type="date" name="departDate"></label>
+				<label class="top">Room Preference
                     <select>
                         <option value="">Please Select &#9662;</option>
                         <option value="msuite">Master Suite</option>
@@ -76,20 +97,21 @@
                         <option value="msuite">Single</option>
                     </select>
                 </label>
-                <label class="top">Number of Guests<input type="number"></label>
-            </fieldset>
-                
-            <fieldset>
-                <legend>Payment</legend>
-                <label class="top">Name on Card<input type="text" name="ccname" required></label>
-                <label class="top">Card Number*<input type="number" name="cardnumber" required></label>
-                <label class="top">Expiry*<input name="cc-exp" placeholder="MM-YYYY" required></label>
-                <label class="top">Security Code*<input type="number" name="cvc" required></label>    
-            </fieldset>    
-                
-                <input type="submit" value="Reserve my Seat" class="submitBtn">
-            
-            </form>
-        </main>
-    </body>
+				<label class="top">Number of Guests<input type="number"></label>
+			</fieldset>
+
+			<fieldset>
+				<legend>Payment</legend>
+				<label class="top">Name on Card<input type="text" name="ccname" required></label>
+				<label class="top">Card Number*<input type="number" name="cardnumber" required></label>
+				<label class="top">Expiry*<input name="cc-exp" placeholder="MM-YYYY" required></label>
+				<label class="top">Security Code*<input type="number" name="cvc" required></label>
+			</fieldset>
+
+			<input type="submit" value="Reserve my Seat" class="submitBtn">
+
+		</form>
+	</main>
+</body>
+
 </html>
