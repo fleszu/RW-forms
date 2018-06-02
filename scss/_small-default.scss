@@ -1,0 +1,72 @@
+p {
+    line-height: 130%;
+    color: $fontColor;
+    
+} // end p
+/* ------ form stuff nested inside main ----- */
+form {
+    margin: 1rem $gutter;
+    max-width: 25rem;
+    fieldset {
+        border: 1px solid $lightGrey;
+        border-radius: .4rem;
+        padding: 0 $gutter;
+        margin: 2rem 0;
+        legend {
+            text-align: center;
+            color: $secondaryColor;
+            padding: 0 .4rem;
+        }
+    }
+    label.top {
+        font-size: .75rem;
+        display: block;
+        padding: .75rem 0;
+        span {
+            font-size: .75rem;
+            color: $secondaryColor;
+        } //end span
+        input, select {
+            display: block;
+            font-size: 1.25rem;
+            padding: .75rem;
+            background-olor: #FbFbFb;
+            border: none;
+            border-radius: 5px;
+            color: $primaryColor;
+            margin-top: .2rem;
+            width: 100%;
+        } // end input
+        textarea {
+            min-height: 13rem;
+        }
+        input:required {
+            border: 1px solid red;
+        }
+        input:required:valid {
+            border-color: $primaryColor;
+        }
+        input:focus {
+            box-shadow: 1px 1px 4px rgba(0,0,0,0.5) inset;
+        }
+    } // end label
+    label.sbs {
+        display: block;
+        padding: .75rem 0;
+    }
+    h2 {
+        font-weight: $normalWeight;
+        font-size: .75rem;
+        padding: 1.5rem 0 0 0;
+    }
+    input.submitBtn {
+        border: none;
+        background-color: $secondaryColor;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: $normalWeight;
+        padding: .4rem 1rem;
+        border-radius: 1rem;
+        width: 100%;
+    }
+} // end form
